@@ -4,7 +4,7 @@ let sign = '';
 let finish = false;
 
 const digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
-const action = ['-', '+', 'X', '/'];
+const action = ['-', '+', 'x', '/', '+/-', '%'];
 
 //display
 const out = document.querySelector('.calc-screen p');
@@ -57,9 +57,7 @@ document.querySelector('.buttons').onclick = (event) => {
   }
   //нажата кнопка =
   if (key === '=') {
-    if (b === '') [
-      b = a
-    ]
+    if (b === '') [(b = a)];
     switch (sign) {
       case '+':
         a = +a + +b;
@@ -67,7 +65,7 @@ document.querySelector('.buttons').onclick = (event) => {
       case '-':
         a = +a - +b;
         break;
-      case 'X':
+      case 'x':
         a = +a * +b;
         break;
       case '/':
@@ -80,10 +78,16 @@ document.querySelector('.buttons').onclick = (event) => {
         }
         a = +a / +b;
         break;
+      case '+/-':
+        out.textContent = 'error';
+        return;
+      case '%':
+        out.textContent = 'error';
+        return;
     }
     finish = true;
     out.textContent = a;
-    console.log(a, b, sign)
+    console.log(a, b, sign);
   }
 };
 

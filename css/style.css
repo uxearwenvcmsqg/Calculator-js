@@ -71,7 +71,7 @@
 }
 
 .bg-orange {
-  background-color: #ff9501;
+  background-color: #462878;
 }
 
 .btn.plus-minus {
@@ -90,4 +90,9 @@
   grid-area: zero;
   width: 100%;
   border-radius: 34px;
+}
+
+.btn.ac {
+  color: #462878;
+  font-size: 26px;
 }
